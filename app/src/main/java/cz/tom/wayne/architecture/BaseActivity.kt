@@ -6,6 +6,9 @@ import android.view.WindowManager
 import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
+import cz.tom.wayne.errorhandler.ErrorHandler
+import cz.tom.wayne.extensions.ifNotNull
+import cz.tom.wayne.navigation.Navigator
 import java.util.*
 
 @Suppress("TooManyFunctions")
@@ -20,7 +23,7 @@ abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity() {
     lateinit var viewModel: T
 
     abstract val navigator: Navigator
-    abstract val fireHandler: FireHandler
+    abstract val fireHandler: ErrorHandler
 
     /**
      * True if this activity uses a NavController. If true, the navigator will try to retrieve it.
@@ -58,12 +61,6 @@ abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         navigator.setLiveActivity(this, uuid, hasNavController)
-        ForegroundState.setForegroundScreen(getScreenType())
-    }
-
-    override fun onPause() {
-        super.onPause()
-        ForegroundState.clearForegroundScreen()
     }
 
     override fun onBackPressed() {
@@ -80,7 +77,7 @@ abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity() {
 
     @CallSuper
     open fun initUi() {
-        fireHandler.activityRequests.bobserve(this) {
+        fireHandler.activityRequests.observe(this) {
             it.invoke(this)
         }
     }
@@ -96,14 +93,6 @@ abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity() {
     open fun setLayout() {
         setContentView(layoutId)
     }
-
-    /**
-     * Return the type of screen that this activity represents. If the screen has an explicit case
-     * defined in [ScreenType], override and return it from this function, otherwise keep the default.
-     * This is used in notifications to determine which screen is in the foreground to only
-     * show notifications related to other screens.
-     */
-    protected open fun getScreenType(): ScreenType = ScreenType.Other
 
     /**
      * Use when some config arguments need to be parsed from the intent extras that were passed when starting this
@@ -133,6 +122,6 @@ abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity() {
      * This just routes the event to [onBackPressed].
      */
     private fun observeBackEventsFromViewModel() {
-        viewModel.goBackEvent.bobserve(this) { onBackPressed() }
+        viewModel.goBackEvent.observe(this) { onBackPressed() }
     }
 }

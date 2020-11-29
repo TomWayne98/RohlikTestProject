@@ -50,4 +50,5 @@ dependencies {
     implementation(Libraries.navigationUi)
     implementation(Libraries.koinViewModel)
     implementation(Libraries.koinAndroid)
+    implementation(Libraries.timber)
 }

@@ -4,10 +4,13 @@ import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import cz.tom.wayne.errorhandler.ErrorHandler
+import cz.tom.wayne.errorhandler.NetworkTask
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
+import timber.log.Timber
 import kotlin.coroutines.CoroutineContext
 
 abstract class BaseViewModel : ViewModel(), CoroutineScope {
@@ -127,11 +130,11 @@ abstract class BaseViewModel : ViewModel(), CoroutineScope {
      * yet) and starts observing the live data. Calls [onUpdated] when the listener is triggered.
      */
     protected inline fun observeTask(
-        fireHandler: FireHandler,
-        task: FireTask,
-        crossinline onUpdated: (task: FireTask) -> Unit
+        fireHandler: ErrorHandler,
+        task: NetworkTask,
+        crossinline onUpdated: (task: NetworkTask) -> Unit
     ) {
-        fireHandler.addLiveDataEventListener(task, FireHandler.PRIORITY_VM)?.let { ld ->
+        fireHandler.addLiveDataEventListener(task, ErrorHandler.PRIORITY_VM)?.let { ld ->
             observeIfNotNull(ld) {
                 onUpdated(it)
             }
