@@ -38,17 +38,26 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
+    implementation(project(Modules.core))
+
     implementation(Libraries.kotlinStd)
     implementation(Libraries.kotlinKtx)
+
     implementation(Libraries.appcompat)
     implementation(Libraries.material)
     implementation(Libraries.annotation)
     implementation(Libraries.constraint)
     implementation(Libraries.livedataKtx)
     implementation(Libraries.viewModel)
+
     implementation(Libraries.navigationFragment)
     implementation(Libraries.navigationUi)
+
     implementation(Libraries.koinViewModel)
     implementation(Libraries.koinAndroid)
+
     implementation(Libraries.timber)
+
+    implementation(Libraries.retrofit)
+    implementation(Libraries.retrofitGson)
 }
