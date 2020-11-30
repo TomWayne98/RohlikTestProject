@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fireball</string>
+    <string name="web_client_id_debug" translatable="false">202582681828-6sciesjsfqv5ekegf0auasch8714e7l4.apps.googleusercontent.com</string>
+    <string name="web_client_id_staging" translatable="false">875877068250-vi1rg48iqmq8sl535f38ogi289o7svn0.apps.googleusercontent.com</string>
+    <string name="google_sign_in_credential" translatable="false">d2424b7d3352ec49c9639d2473f70afef5f78935</string>
+    <string name="facebook_app_secret" translatable="false">738f6d54d769b8e0e461d229646ecbff</string>
+    <string name="facebook_app_id" translatable="false">1226939667461316</string>
+    <string name="fb_login_protocol_scheme">fb1226939667461316</string>
+    <string name="facebook_redirect_uri" translatable="false">https://fireball-rpg.firebaseapp.com/__/auth/handler</string>
+</resources>

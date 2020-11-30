@@ -1,4 +1,7 @@
 include(
-    ":app"
+    ":app",
+    ":preferences",
+    ":core",
+    ":architecture"
 )
 rootProject.name = "TomWayne"
