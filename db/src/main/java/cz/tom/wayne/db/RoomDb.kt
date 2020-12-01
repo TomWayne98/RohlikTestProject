@@ -10,7 +10,7 @@ import cz.tom.wayne.core.data.DogImageEntity
     entities = [
         DogImageEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 @TypeConverters()

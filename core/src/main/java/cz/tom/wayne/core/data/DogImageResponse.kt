@@ -1,5 +1,6 @@
 package cz.tom.wayne.core.data
 
+import android.provider.Settings
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -14,19 +15,13 @@ data class DogImageResponse(
 @Entity
 data class DogImageEntity(
     @PrimaryKey
-    // Unique database ID
-    val id: String,
+    // Unique database ID based on timestamp
+    val id: Long,
     // URL to dog image picture
     val url: String
-) {
-    companion object {
-        const val URL_SUFFIX = ".jpg"
-        const val IMAGE_ID_PREFIX = "/"
-    }
-}
+)
 
 fun DogImageResponse.toDBEntity(): DogImageEntity {
-    val id = message.split(DogImageEntity.IMAGE_ID_PREFIX).last().removeSuffix(DogImageEntity.URL_SUFFIX)
-    return DogImageEntity(id, this.message)
+    return DogImageEntity(System.currentTimeMillis(), this.message)
 }
 
