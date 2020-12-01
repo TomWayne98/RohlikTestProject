@@ -9,7 +9,7 @@ interface DogRepo {
     /**
      * Download another dog image
      */
-    fun refreshRandomImage()
+    suspend fun refreshRandomImage()
 
     /**
      * Get the last downloaded image

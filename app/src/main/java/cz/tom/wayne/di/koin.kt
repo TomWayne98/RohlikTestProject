@@ -1,6 +1,7 @@
 package cz.tom.wayne.di
 
 import androidx.room.Room
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import cz.tom.wayne.R
 import cz.tom.wayne.core.apis.DogApi
 import cz.tom.wayne.core.navigation.Navigator
@@ -19,7 +20,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 val networkModule: Module = module {
     single<DogApi> {
         val retroClient = Retrofit.Builder()
-            .baseUrl(androidContext().getString(R.string.movie_db_api_base_url))
+            .baseUrl(androidContext().getString(R.string.dog_api_base_url))
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         retroClient.create(DogApi::class.java)

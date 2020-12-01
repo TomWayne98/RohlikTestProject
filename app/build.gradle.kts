@@ -64,6 +64,7 @@ dependencies {
 
     implementation(Libraries.retrofit)
     implementation(Libraries.retrofitGson)
+    implementation(Libraries.retrofitCoroutines)
 
     implementation(Libraries.roomRuntime)
 }

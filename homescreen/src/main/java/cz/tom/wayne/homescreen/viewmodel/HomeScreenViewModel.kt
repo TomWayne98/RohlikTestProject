@@ -22,7 +22,9 @@ class HomeScreenViewModel(private val dogRepo: DogRepo) : BaseViewModel() {
     }
 
     fun getAnotherDogPicture() {
-        dogRepo.refreshRandomImage()
+        launch {
+            dogRepo.refreshRandomImage()
+        }
     }
 
 }

@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">TomWayne</string>
-    <string name="movie_db_api_base_url">https://api.themoviedb.org/3/</string>
     <string name="dog_api_base_url">https://dog.ceo/api/</string>
 </resources>
