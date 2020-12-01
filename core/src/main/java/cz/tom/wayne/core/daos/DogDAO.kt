@@ -19,6 +19,6 @@ interface DogDAO {
     @Query("SELECT * FROM DogImageEntity")
     fun getAllDogImages(): Flow<List<DogImageEntity>?>
 
-    @Query("SELECT * FROM DogImageEntity LIMIT 1")
+    @Query("SELECT * FROM DogImageEntity order by id desc LIMIT 1")
     fun getLastDog(): Flow<List<DogImageEntity>?>
 }
