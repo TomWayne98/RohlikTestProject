@@ -14,7 +14,7 @@ import kotlin.system.exitProcess
 @Suppress("TooManyFunctions")
 class NavigatorImpl : Navigator() {
 
-    override val mainNavigator: MainNavigator = MainNavigatorImpl()
+    override val homeScreenNavigator: MainNavigator = MainNavigatorImpl()
 
     private var liveActivity: Activity? = null
     private var navController: NavController? = null

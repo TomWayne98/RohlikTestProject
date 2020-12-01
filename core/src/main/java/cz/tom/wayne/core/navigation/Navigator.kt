@@ -13,7 +13,7 @@ import java.util.*
 @Suppress("TooManyFunctions")
 abstract class Navigator {
 
-    abstract val mainNavigator: MainNavigator
+    abstract val homeScreenNavigator: MainNavigator
 
     /**
      * This has to be called in onResume from each activity in order to connect the activity to the Navigator.
