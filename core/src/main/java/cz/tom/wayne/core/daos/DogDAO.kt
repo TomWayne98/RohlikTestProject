@@ -17,8 +17,8 @@ interface DogDAO {
     fun insertDogImage(dog: DogImageEntity)
 
     @Query("SELECT * FROM DogImageEntity")
-    fun getAllDogImages()
+    fun getAllDogImages(): Flow<List<DogImageEntity>?>
 
     @Query("SELECT * FROM DogImageEntity LIMIT 1")
-    suspend fun getLastDog(): Flow<DogImageEntity?>
+    fun getLastDog(): Flow<List<DogImageEntity>?>
 }
