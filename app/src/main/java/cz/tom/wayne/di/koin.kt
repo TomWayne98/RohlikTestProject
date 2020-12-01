@@ -46,7 +46,7 @@ val navigationModule: Module = module {
 }
 
 val homeScreenModule: Module = module {
-    viewModel { HomeScreenViewModel(get()) }
+    viewModel { HomeScreenViewModel(get(), get(), get()) }
     single<DogRepo> { DogRepoImpl(get(), get()) }
 }
 
