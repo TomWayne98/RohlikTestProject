@@ -1,30 +1,35 @@
-# TomWayne - Rohlik Test Project
+# Info
 
-Simple app used as showcase of my variation of MVVM architecture.
-App consists of two screens. First allows you to fetch a random dog picture from API via Retrofit. Second screen allows you to scroll through all the fetched pictures.
+Simple app used as showcase of my variation of MVVM architecture. 
 
-App consist of several modules. Some of them are newly created ("homescreen", "db" and "app") 
-and some of them are buildings blocks used in my other apps ("ui", "architecture", "core"). These modules contains common stuff used for building android apps with MVVM architecture.
-For that reason there are methods which are not used in this specific app.
+App consists of two screens. 
+1. First allows you to fetch a random dog picture from API via Retrofit. 
+2. Second screen allows you to scroll through all the fetched pictures.
 
-Tech stack:
-Kotlin,
-Koin,
-Jetpack,
-Room,
-Retrofit
-Gradle Kotlin DSL,
-Coroutines,
-Navigation...
+## Description
+App consist of several modules.
+Some of them are newly created (**homescreen**, **db** and **app**) and some of them are buildings blocks used in my other apps (**ui**, **architecture** and **core**). 
+These modules contains common stuff used for building android apps with MVVM architecture. For that reason there are methods which are not used in this specific app.
 
-Modules:
+## Tech stack: 
+Kotlin, Koin, Jetpack, Room, Retrofit Gradle Kotlin DSL, Coroutines, Navigation...
 
-App: Contains DI
-Homescreen: Contains the activities, fragments, viewmodels and repos used in the app
-DB: Contains all SQL DB stuff used in app
+## Modules:
 
-UI: commonly used extensions, views and all the other UI related stuff
-Architecture: Base classes for activities, fragments, viewmodels etc. Containing the basic logic such as proper lifecycle handling
-Core: Contains all the interfaces necessary for DI and bunch of extensions used across the whole app
-BuildSrc: Contains files necessary for Kotlin DSL 
+#### App: 
+Contains DI 
+#### Homescreen: 
+Contains the activities, fragments, viewmodels and repos used in the app 
+#### DB: 
+Contains all SQL DB stuff used in app
+
+#### UI: 
+Commonly used extensions, views and all the other UI related stuff 
+#### Architecture: 
+Base classes for activities, fragments, viewmodels etc. Containing the basic logic such as proper lifecycle handling.
+#### Core: 
+Contains all the interfaces necessary for DI and bunch of extensions used across the whole app.
+
+#### BuildSrc:
+Contains files necessary for Kotlin DSL
 
