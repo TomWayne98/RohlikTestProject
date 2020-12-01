@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="i_want_more_dogs">I want more dogs</string>
+    <string name="check_connection">Check connection</string>
+    <string name="random">Random</string>
+    <string name="cached">Cached</string>
 </resources>

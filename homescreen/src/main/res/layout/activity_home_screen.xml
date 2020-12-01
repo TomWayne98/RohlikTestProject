@@ -8,12 +8,21 @@
     tools:context=".view.HomeScreenActivity">
 
     <fragment
+        android:id="@+id/vNavHostFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="false"
-        android:id="@+id/vNavHostFragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph_home_screen" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/vBottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_navigation" />
 
 </FrameLayout>
