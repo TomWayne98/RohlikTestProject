@@ -39,6 +39,8 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     implementation(project(Modules.core))
+    implementation(project(Modules.homescreen))
+    implementation(project(Modules.prefs))
 
     implementation(Libraries.kotlinStd)
     implementation(Libraries.kotlinKtx)

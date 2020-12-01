@@ -36,4 +36,6 @@ dependencies {
     implementation(Libraries.roomRuntime)
     implementation(Libraries.roomCoroutines)
     kapt(Libraries.roomCompiler)
+
+    implementation(Libraries.retrofit)
 }
