@@ -6,6 +6,9 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.Observer
 import java.util.concurrent.atomic.AtomicBoolean
 
+/**
+ * Google SingleLiveEvent to get full info
+ */
 class SingleLiveEvent<T> : MediatorLiveData<T>() {
 
     private val pending = AtomicBoolean()

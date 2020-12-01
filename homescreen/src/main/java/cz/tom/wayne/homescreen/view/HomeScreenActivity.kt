@@ -9,6 +9,9 @@ import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import timber.log.Timber
 
+/**
+ * Activity containing all screens in the app
+ */
 class HomeScreenActivity : BaseActivity<HomeScreenViewModel>() {
 
     override val layoutId = R.layout.activity_home_screen

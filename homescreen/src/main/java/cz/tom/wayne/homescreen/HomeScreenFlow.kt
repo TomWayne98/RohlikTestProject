@@ -4,7 +4,7 @@ import cz.tom.wayne.core.navigation.Flow
 import cz.tom.wayne.core.navigation.Navigator
 
 /**
- * List all posible destination changes in HomeScreenActivity
+ * List all possible destination changes in HomeScreenActivity
  */
 class HomeScreenFlow(navigator: Navigator) : Flow(navigator) {
 

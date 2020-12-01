@@ -1,6 +1,5 @@
 include(
     ":app",
-    ":preferences",
     ":core",
     ":architecture",
     ":homescreen",

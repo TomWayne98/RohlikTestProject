@@ -2,9 +2,11 @@ package cz.tom.wayne.core.apis
 
 import cz.tom.wayne.core.data.DogImageResponse
 import kotlinx.coroutines.Deferred
-import retrofit2.Response
 import retrofit2.http.GET
 
+/**
+ * Contains all dog related API calls
+ */
 interface DogApi {
 
     /**

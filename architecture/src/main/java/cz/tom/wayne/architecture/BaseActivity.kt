@@ -1,6 +1,5 @@
 package cz.tom.wayne.architecture
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
@@ -11,6 +10,10 @@ import cz.tom.wayne.core.extensions.ifNotNull
 import cz.tom.wayne.core.navigation.Navigator
 import java.util.*
 
+/**
+ * Contains all common logic for activities
+ * Should be inherited by all activities
+ */
 @Suppress("TooManyFunctions")
 abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity() {
 
@@ -77,9 +80,6 @@ abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity() {
 
     @CallSuper
     open fun initUi() {
-        /*fireHandler.activityRequests.observe(this) {
-            it.invoke(this)
-        }*/
     }
 
     /**

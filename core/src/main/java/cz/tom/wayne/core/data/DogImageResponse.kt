@@ -1,6 +1,5 @@
 package cz.tom.wayne.core.data
 
-import android.provider.Settings
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -12,6 +11,9 @@ data class DogImageResponse(
     val message: String
 )
 
+/**
+ * SQL entity for dog images
+ */
 @Entity
 data class DogImageEntity(
     @PrimaryKey

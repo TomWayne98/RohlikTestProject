@@ -7,12 +7,14 @@ import cz.tom.wayne.architecture.SingleLiveEvent
 import cz.tom.wayne.core.data.DogImageEntity
 import cz.tom.wayne.core.extensions.collectIfNotCollecting
 import cz.tom.wayne.core.extensions.isNetworkAvailable
-import cz.tom.wayne.core.navigation.MainNavigator
 import cz.tom.wayne.core.repositories.DogRepo
 import cz.tom.wayne.homescreen.HomeScreenFlow
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
 
+/**
+ * ViewModel for all HomeScreenActivity fragments
+ */
 @ExperimentalCoroutinesApi
 class HomeScreenViewModel(private val context: Context, private val dogRepo: DogRepo, private val flow: HomeScreenFlow) :
     BaseViewModel() {

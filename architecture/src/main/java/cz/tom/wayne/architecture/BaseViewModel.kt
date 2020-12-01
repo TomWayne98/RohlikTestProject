@@ -11,6 +11,10 @@ import kotlinx.coroutines.cancel
 import timber.log.Timber
 import kotlin.coroutines.CoroutineContext
 
+/**
+ * Contains all common logic for viewModels - handling lifecycler of coroutines etc.
+ * Should be inherited by all viewModels
+ */
 abstract class BaseViewModel : ViewModel(), CoroutineScope {
 
     private val job = SupervisorJob()
@@ -127,17 +131,17 @@ abstract class BaseViewModel : ViewModel(), CoroutineScope {
      * Adds a live data event listener for the given [task] to [fireHandler] (if it was not added
      * yet) and starts observing the live data. Calls [onUpdated] when the listener is triggered.
      */
-   /* protected inline fun observeTask(
-        fireHandler: ErrorHandler,
-        task: NetworkTask,
-        crossinline onUpdated: (task: NetworkTask) -> Unit
-    ) {
-        fireHandler.addLiveDataEventListener(task, ErrorHandler.PRIORITY_VM)?.let { ld ->
-            observeIfNotNull(ld) {
-                onUpdated(it)
-            }
-        }
-    }*/
+    /* protected inline fun observeTask(
+         fireHandler: ErrorHandler,
+         task: NetworkTask,
+         crossinline onUpdated: (task: NetworkTask) -> Unit
+     ) {
+         fireHandler.addLiveDataEventListener(task, ErrorHandler.PRIORITY_VM)?.let { ld ->
+             observeIfNotNull(ld) {
+                 onUpdated(it)
+             }
+         }
+     }*/
 
     override fun onCleared() {
         cancel()

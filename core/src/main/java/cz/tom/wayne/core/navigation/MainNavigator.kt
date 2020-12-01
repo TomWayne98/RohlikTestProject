@@ -1,5 +1,6 @@
 package cz.tom.wayne.core.navigation
 
+
 abstract class MainNavigator {
 
     /**

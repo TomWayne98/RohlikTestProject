@@ -29,7 +29,6 @@ val networkModule: Module = module {
     }
 }
 
-
 val dbModule: Module = module {
     single {
         Room.databaseBuilder(
