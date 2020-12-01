@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_home_screen">
+
+    <fragment
+        android:id="@+id/randomDogImageFragment"
+        android:name="cz.tom.wayne.homescreen.view.RandomDogImageFragment">
+
+        <action
+            android:id="@+id/action_random_dog_to_cached_dogs"
+            app:destination="@id/cachedDogsFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/randomDogImageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cachedDogsFragment"
+        android:name="cz.tom.wayne.homescreen.view.CachedDogsFragment">
+
+        <action
+            android:id="@+id/action_cached_dogs_to_random_dog"
+            app:destination="@id/cachedDogsFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/cachedDogsFragment" />
+    </fragment>
+
+
+
+</navigation>
