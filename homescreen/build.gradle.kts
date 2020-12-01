@@ -38,4 +38,5 @@ dependencies {
     implementation(Libraries.navigationUi)
     implementation(Libraries.navigationFragment)
     implementation(Libraries.koinViewModel)
+    implementation(Libraries.retrofit)
 }

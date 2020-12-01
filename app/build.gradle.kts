@@ -41,6 +41,8 @@ dependencies {
     implementation(project(Modules.core))
     implementation(project(Modules.homescreen))
     implementation(project(Modules.prefs))
+    implementation(project(Modules.architecture))
+    implementation(project(Modules.db))
 
     implementation(Libraries.kotlinStd)
     implementation(Libraries.kotlinKtx)
@@ -62,4 +64,6 @@ dependencies {
 
     implementation(Libraries.retrofit)
     implementation(Libraries.retrofitGson)
+
+    implementation(Libraries.roomRuntime)
 }

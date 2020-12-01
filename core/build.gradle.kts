@@ -13,6 +13,12 @@ android {
         targetSdkVersion(Versions.targetSdk)
         versionCode = Releases.versionCode
         versionName = Releases.versionName
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                argument("room.incremental", "true") // this is needed to enable incremental annotation processing for Room
+            }
+        }
     }
 
     lintOptions {
@@ -22,7 +28,10 @@ android {
 
     buildTypes {
         getByName("debug") {
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 }
@@ -30,7 +39,7 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(Libraries.lifecycleExtensions)
-   // implementation(Libraries.coroutines)
+    // implementation(Libraries.coroutines)
     api(Libraries.timber)
 
     implementation(Libraries.roomRuntime)
