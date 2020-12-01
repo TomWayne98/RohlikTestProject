@@ -7,7 +7,6 @@ import android.view.WindowManager
 import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
-import cz.tom.wayne.core.errorhandler.ErrorHandler
 import cz.tom.wayne.core.extensions.ifNotNull
 import cz.tom.wayne.core.navigation.Navigator
 import java.util.*
@@ -24,7 +23,7 @@ abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity() {
     lateinit var viewModel: T
 
     abstract val navigator: Navigator
-    abstract val fireHandler: ErrorHandler
+    //abstract val fireHandler: ErrorHandler
 
     /**
      * True if this activity uses a NavController. If true, the navigator will try to retrieve it.
@@ -78,9 +77,9 @@ abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity() {
 
     @CallSuper
     open fun initUi() {
-        fireHandler.activityRequests.observe(this) {
+        /*fireHandler.activityRequests.observe(this) {
             it.invoke(this)
-        }
+        }*/
     }
 
     /**

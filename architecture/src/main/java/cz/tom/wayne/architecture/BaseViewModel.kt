@@ -4,8 +4,6 @@ import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
-import cz.tom.wayne.core.errorhandler.ErrorHandler
-import cz.tom.wayne.core.errorhandler.NetworkTask
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -129,7 +127,7 @@ abstract class BaseViewModel : ViewModel(), CoroutineScope {
      * Adds a live data event listener for the given [task] to [fireHandler] (if it was not added
      * yet) and starts observing the live data. Calls [onUpdated] when the listener is triggered.
      */
-    protected inline fun observeTask(
+   /* protected inline fun observeTask(
         fireHandler: ErrorHandler,
         task: NetworkTask,
         crossinline onUpdated: (task: NetworkTask) -> Unit
@@ -139,7 +137,7 @@ abstract class BaseViewModel : ViewModel(), CoroutineScope {
                 onUpdated(it)
             }
         }
-    }
+    }*/
 
     override fun onCleared() {
         cancel()
