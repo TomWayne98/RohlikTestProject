@@ -9,31 +9,38 @@ import cz.tom.wayne.core.extensions.collectIfNotCollecting
 import cz.tom.wayne.core.extensions.isNetworkAvailable
 import cz.tom.wayne.core.navigation.MainNavigator
 import cz.tom.wayne.core.repositories.DogRepo
+import cz.tom.wayne.homescreen.HomeScreenFlow
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
 
 @ExperimentalCoroutinesApi
-class HomeScreenViewModel(private val context: Context, private val dogRepo: DogRepo, private val mainNavigator: MainNavigator) :
+class HomeScreenViewModel(private val context: Context, private val dogRepo: DogRepo, private val flow: HomeScreenFlow) :
     BaseViewModel() {
 
     val currentDogImage = MutableLiveData<DogImageEntity>()
+    val allDogsImages = MutableLiveData<List<DogImageEntity>>()
 
     val showNoConnectionEvent = SingleLiveEvent<Boolean>()
 
     init {
         launch {
-            dogRepo.getLastCachedDog().collectIfNotCollecting("LAST_DOG") {
+            dogRepo.getLastCachedDog().collectIfNotCollecting(TAG_LAST_DOG) {
                 currentDogImage.postValue(it)
+            }
+        }
+        launch {
+            dogRepo.getAllDogs().collectIfNotCollecting(TAG_ALL_DOGS) {
+                allDogsImages.postValue(it)
             }
         }
     }
 
     fun showCachedDogsClicked() {
-        mainNavigator.showCachedDogs()
+        flow.showCachedDogs()
     }
 
     fun showCurrentDogClicked() {
-        mainNavigator.showCurrentDog()
+        flow.showCurrentDog()
     }
 
     fun getAnotherDogPictureClicked() {
@@ -44,5 +51,10 @@ class HomeScreenViewModel(private val context: Context, private val dogRepo: Dog
         } else {
             showNoConnectionEvent.call()
         }
+    }
+
+    companion object {
+        const val TAG_LAST_DOG = "LAST_DOG"
+        const val TAG_ALL_DOGS = "ALL_DOGS"
     }
 }

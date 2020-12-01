@@ -20,11 +20,16 @@ class HomeScreenActivity : BaseActivity<HomeScreenViewModel>() {
     }
 
     override fun initUi() {
+        var lastSelectedItem = 0
         vBottomNavigation.setOnNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.action_current -> viewModel.showCurrentDogClicked()
-                R.id.action_cached -> viewModel.showCachedDogsClicked()
+            val itemId = it.itemId
+            if (itemId != lastSelectedItem) {
+                when (itemId) {
+                    R.id.action_current -> viewModel.showCurrentDogClicked()
+                    R.id.action_cached -> viewModel.showCachedDogsClicked()
+                }
             }
+            lastSelectedItem = itemId
             Timber.d("Menu item with id ${it.itemId} selected")
             true
         }

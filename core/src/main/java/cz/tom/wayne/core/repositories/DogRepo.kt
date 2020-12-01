@@ -1,6 +1,5 @@
 package cz.tom.wayne.core.repositories
 
-import androidx.lifecycle.LiveData
 import cz.tom.wayne.core.data.DogImageEntity
 import kotlinx.coroutines.flow.Flow
 
@@ -15,4 +14,9 @@ interface DogRepo {
      * Get the last downloaded image
      */
     suspend fun getLastCachedDog(): Flow<DogImageEntity>
+
+    /**
+     * Get all dogs in the database
+     */
+    suspend fun getAllDogs(): Flow<List<DogImageEntity>?>
 }

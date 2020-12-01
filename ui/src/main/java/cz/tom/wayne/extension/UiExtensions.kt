@@ -92,7 +92,7 @@ fun <T> RecyclerView.setup(lifecycle: LifecycleOwner, binder: SimpleBinder<T>, i
 
 fun RecyclerView.addBasicItemMargin() {
     addItemDecoration(
-        MarginItemDecoration(firstItem = resources.dpToPxInt(Constants.RECYCLER_EXTRA_MARGIN), lastItem = resources.dpToPxInt(Constants.RECYCLER_EXTRA_MARGIN))
+        MarginItemDecoration(betweenItems = resources.dpToPxInt(Constants.RECYCLER_EXTRA_MARGIN), firstItem = resources.dpToPxInt(Constants.RECYCLER_EXTRA_MARGIN), lastItem = resources.dpToPxInt(Constants.RECYCLER_EXTRA_MARGIN))
     )
 }
 

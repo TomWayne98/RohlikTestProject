@@ -32,4 +32,7 @@ class DogRepoImpl(private val dogApi: DogApi, private val dogDAO: DogDAO) : DogR
             }
         }
     }
+
+    override suspend fun getAllDogs() = dogDAO.getAllDogImages()
+
 }

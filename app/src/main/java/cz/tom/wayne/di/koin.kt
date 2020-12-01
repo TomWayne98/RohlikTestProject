@@ -7,6 +7,7 @@ import cz.tom.wayne.core.apis.DogApi
 import cz.tom.wayne.core.navigation.Navigator
 import cz.tom.wayne.core.repositories.DogRepo
 import cz.tom.wayne.db.RoomDb
+import cz.tom.wayne.homescreen.HomeScreenFlow
 import cz.tom.wayne.homescreen.model.DogRepoImpl
 import cz.tom.wayne.homescreen.viewmodel.HomeScreenViewModel
 import cz.tom.wayne.navigator.NavigatorImpl
@@ -42,6 +43,7 @@ val dbModule: Module = module {
 }
 
 val navigationModule: Module = module {
+    single { HomeScreenFlow(get()) }
     single<Navigator> { NavigatorImpl() }
 }
 
