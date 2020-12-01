@@ -1,4 +1,4 @@
-package cz.tom.wayne.sharedpreferences
+package cz.tom.wayne.prefs
 
 import android.content.Context
 
